@@ -1,0 +1,57 @@
+﻿{
+  "workflows": [
+    {
+      "id": "6240e1f7-b90b-4e60-8b2c-36130b043390",
+      "name": "Refresh Currency Market",
+      "description": "",
+      "rootActivityId": "ad923e32-c548-4bda-99fa-90d59dbd68eb",
+      "activities": [
+        {
+          "id": "ad923e32-c548-4bda-99fa-90d59dbd68eb",
+          "activityName": "RestClientActivity",
+          "nextActivityId": "7bbb8f35-3f19-48da-899d-beb201fa3b08",
+          "configuration": {
+            "baseUrl": "https://api.coinmarketcap.com",
+            "resource": "/v1/ticker/",
+            "query": "limit=0",
+            "method": "get"
+          }
+        },
+
+        {
+          "id": "7bbb8f35-3f19-48da-899d-beb201fa3b08",
+          "activityName": "LoopActivity",
+          "keepSelfInput": true,
+          "nextActivityId": "55e07a21-b022-4282-a30a-a7e2b2e214fd",
+          "configuration": {
+            "startActivityId": "17cde0b2-06fa-4d7d-93e9-e39b3794fa9a",
+            "endActivityId": "975f0f29-b0b1-4cdd-bce4-b23f722da6f4"
+          }
+        },
+
+        {
+          "id": "17cde0b2-06fa-4d7d-93e9-e39b3794fa9a",
+          "activityName": "DataMappingActivity",
+          "nextActivityId": "975f0f29-b0b1-4cdd-bce4-b23f722da6f4",
+          "configuration": {
+            "template": "Templates\\CurrencyMarketDataMapping.cshtml"
+          }
+        },
+
+        {
+          "id": "975f0f29-b0b1-4cdd-bce4-b23f722da6f4",
+          "activityName": "DbRecordUpdateActivity",
+          "configuration": {
+            "table": "CurrencyMarket",
+            "where": "Symbol=@0",
+            "createIfNotExists": true,
+            "params": [ "{Symbol}" ],
+            "values": {
+            }
+          }
+        }
+      ]
+    }
+
+  ]
+}
