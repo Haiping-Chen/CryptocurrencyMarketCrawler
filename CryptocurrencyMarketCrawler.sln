@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStarter", "WebStarter\WebStarter.csproj", "{B20EB01F-EEAD-4B1E-8641-DCFAB53B4EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStarter", "WebStarter\WebStarter.csproj", "{B20EB01F-EEAD-4B1E-8641-DCFAB53B4EAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler", "Crawler\Crawler.csproj", "{3AF25FCD-6484-46FC-8024-842CCDAE6152}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quickflow.ActivityRepository", "..\Quickflow\Quickflow.ActivityRepository\Quickflow.ActivityRepository.csproj", "{A48DF662-1CB8-4A99-8282-F97CA7FE7D42}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quickflow.Core", "..\Quickflow\Quickflow.Core\Quickflow.Core.csproj", "{B4CC9FE5-166B-46B9-8197-1B579C0AF8C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crawler", "Crawler\Crawler.csproj", "{3AF25FCD-6484-46FC-8024-842CCDAE6152}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +21,6 @@ Global
 		{3AF25FCD-6484-46FC-8024-842CCDAE6152}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AF25FCD-6484-46FC-8024-842CCDAE6152}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AF25FCD-6484-46FC-8024-842CCDAE6152}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A48DF662-1CB8-4A99-8282-F97CA7FE7D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A48DF662-1CB8-4A99-8282-F97CA7FE7D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A48DF662-1CB8-4A99-8282-F97CA7FE7D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A48DF662-1CB8-4A99-8282-F97CA7FE7D42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4CC9FE5-166B-46B9-8197-1B579C0AF8C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4CC9FE5-166B-46B9-8197-1B579C0AF8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4CC9FE5-166B-46B9-8197-1B579C0AF8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4CC9FE5-166B-46B9-8197-1B579C0AF8C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

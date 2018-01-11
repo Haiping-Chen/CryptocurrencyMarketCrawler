@@ -43,9 +43,8 @@
           "activityName": "DbRecordUpdateActivity",
           "configuration": {
             "table": "Currency",
-            "where": "Symbol=@0",
+            "where": "Symbol=={Symbol}",
             "createIfNotExists": true,
-            "params": [ "{Symbol}" ],
             "values": {
             }
           }

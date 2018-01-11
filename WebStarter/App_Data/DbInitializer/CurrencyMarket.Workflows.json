@@ -43,9 +43,8 @@
           "activityName": "DbRecordUpdateActivity",
           "configuration": {
             "table": "CurrencyMarket",
-            "where": "Symbol=@0",
+            "where": "Symbol=={Symbol} and UpdatedTime=={UpdatedTime}",
             "createIfNotExists": true,
-            "params": [ "{Symbol}" ],
             "values": {
             }
           }

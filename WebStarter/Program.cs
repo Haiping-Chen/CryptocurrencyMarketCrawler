@@ -21,7 +21,6 @@ namespace WebStarter
             WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-
                     var env = hostingContext.HostingEnvironment;
                     var settings = Directory.GetFiles("Settings", "*settings.json");
                     settings.ToList().ForEach(setting =>
@@ -38,6 +37,7 @@ namespace WebStarter
                 })
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5001")
                 .Build();
     }
 }

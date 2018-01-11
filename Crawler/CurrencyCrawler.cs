@@ -1,6 +1,7 @@
 ﻿using EntityFrameworkCore.BootKit;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Quartz;
 using Quickflow.Core;
 using Quickflow.Core.Entities;
 using Quickflow.Core.Utilities;
@@ -9,12 +10,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Crawler
 {
-    public class CurrencyCrawler
+    public class CurrencyCrawler : ScheduleJobBase, IScheduleJob
     {
-        public static void Start()
+        public override Task Execute(IJobExecutionContext context)
         {
             var dc = DbAgent.InitDc();
 
@@ -25,6 +27,8 @@ namespace Crawler
             };
 
             dc.DbTran(async () => await wf.Run(dc, new { }));
-        }    
+
+            return Task.CompletedTask;
+        }
     }
 }

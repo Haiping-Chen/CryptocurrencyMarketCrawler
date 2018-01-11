@@ -1,14 +1,16 @@
 ﻿using EntityFrameworkCore.BootKit;
+using Quartz;
 using Quickflow.Core;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Crawler
 {
-    public class CurrencyMarketCrawler
+    public class CurrencyMarketCrawler : ScheduleJobBase, IScheduleJob
     {
-        public static void Start()
+        public override Task Execute(IJobExecutionContext context)
         {
             var dc = DbAgent.InitDc();
 
@@ -19,6 +21,8 @@ namespace Crawler
             };
 
             dc.DbTran(async () => await wf.Run(dc, new { }));
+
+            return Task.CompletedTask;
         }
     }
 }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Crawler;
 using EntityFrameworkCore.BootKit;
-using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,10 +25,6 @@ namespace WebStarter
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string db = Configuration.GetSection("Database:Default").Value;
-            string connection = Configuration.GetSection("Database:ConnectionStrings")[db];
-            services.AddHangfire(x => x.UseSqlServerStorage(connection));
-
             services.AddMvc();
         }
 
@@ -48,12 +43,10 @@ namespace WebStarter
 
             DbInitWorkflows.Init();
 
-            //app.UseHangfireServer();
-            //app.UseHangfireDashboard("/schedulers");
+            SchedulerInitializer.Initialize();
 
-            //RecurringJob.AddOrUpdate(() => CurrencyMarketRefreshJob.Refresh(0), Cron.MinuteInterval(5));
-            CurrencyCrawler.Start();
-            CurrencyMarketCrawler.Start();
+            //new CurrencyCrawler().Execute(null);
+            //new CurrencyMarketCrawler().Execute(null);
         }
     }
 }

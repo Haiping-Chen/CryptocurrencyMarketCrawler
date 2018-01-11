@@ -2,7 +2,7 @@
   "Database": {
     "Default": "SqlServer",
     "ConnectionStrings": {
-      "SqlServer": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Crawler;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+      "SqlServer": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CryptocurrencyMarket;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
     }
   }
 }

@@ -1,0 +1,9 @@
+﻿{
+  "Scheduler": {
+    "Enable": true,
+    "Crons": {
+      "CurrencyCrawler": "0 0 0 * * ?",
+      "CurrencyMarketCrawler": "0 0 0/1 * * ?"
+    }
+  }
+}
